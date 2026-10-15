@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposta SOS Consulta | Júlio Assumpção</title>
+<meta property="og:title" content="Proposta de transmissão ao vivo · SOS Consulta">
+<meta property="og:description" content="Lives mensais no YouTube e no Instagram, por Júlio Assumpção.">
+<style>
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(../../assets/fonts/archivo-latin-wdth-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(../../assets/fonts/archivo-latin-ext-wdth-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400;font-display:swap;src:url(../../assets/fonts/geist-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(../../assets/fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
+</style>
+<style>
+:root{
+  --papel:#F2F1EE;--papel-2:#E9E7E2;--tinta:#111111;--cinza:#6B6A66;--linha:#D9D7D1;--rec:#E5322D;
+  --gutter:clamp(16px,3vw,40px);--max:1120px;
+  --mono:"Geist Mono",ui-monospace,Menlo,monospace;--serif:"Instrument Serif",Georgia,serif;--wide:"Archivo",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--tinta);background:var(--papel);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--rec);outline-offset:3px}
+em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.frame{max-width:var(--max);margin:0 auto;border-left:1px solid var(--linha);border-right:1px solid var(--linha)}
+.pad{padding-left:var(--gutter);padding-right:var(--gutter)}
+.ponto{width:8px;height:8px;border-radius:50%;background:var(--rec);display:inline-block;animation:pisca 1s steps(2,start) infinite}
+@keyframes pisca{to{visibility:hidden}}
+
+/* abertura */
+.intro{position:fixed;inset:0;z-index:100;background:var(--papel);display:grid;place-items:center;transition:opacity .6s ease .1s,visibility 0s linear .7s}
+.intro.saiu{opacity:0;visibility:hidden}
+.intro-box{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.intro-marca{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2rem,6vw,4rem);line-height:1.25;letter-spacing:-.02em}
+.intro-tc{font-family:var(--mono);font-size:.8rem;color:var(--cinza);display:flex;gap:10px;align-items:center;font-variant-numeric:tabular-nums}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:50;background:rgba(242,241,238,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
+.topo .frame{display:flex;justify-content:space-between;align-items:stretch;height:52px}
+.logo{display:flex;align-items:center;gap:8px;padding-left:var(--gutter);font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900}
+.logo .ponto{animation:none}
+.topo-dir{display:flex;align-items:center}
+.topo-dir .mono{color:var(--cinza);padding:0 18px}
+.topo-cta{display:flex;align-items:center;height:100%;padding:0 20px;background:var(--tinta);color:var(--papel);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.topo-cta:hover{background:var(--rec)}
+@media (max-width:640px){.topo-dir .mono{display:none}}
+
+/* barras e seções */
+.barra{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;border-bottom:1px solid var(--linha);color:var(--cinza)}
+.cab{padding-top:clamp(44px,6vw,80px);padding-bottom:clamp(28px,4vw,48px)}
+.cab h2{font-family:var(--wide);font-weight:800;font-size:clamp(2.1rem,5vw,4.2rem);line-height:1;letter-spacing:-.03em;text-wrap:balance}
+.cab h2 em{font-size:1.06em}
+.cab p{max-width:56ch;color:var(--cinza);margin-top:16px;font-size:1.05rem}
+section{border-bottom:1px solid var(--linha)}
+
+/* hero */
+.hero .frame{padding-top:clamp(48px,9vh,110px);padding-bottom:clamp(36px,6vh,72px)}
+.hero .mono{color:var(--cinza)}
+.hero h1{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.4rem,8.4vw,7.2rem);line-height:1;letter-spacing:-.03em;text-transform:uppercase;margin-top:18px}
+.hero h1 em{text-transform:none;font-weight:400;font-variation-settings:normal;font-size:1.02em;display:block}
+.hero-sub{max-width:52ch;margin-top:22px;font-size:clamp(1.05rem,1.4vw,1.2rem)}
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linha);margin-top:clamp(32px,5vw,56px)}
+.ficha div{padding:16px 16px 18px 0;border-right:1px solid var(--linha)}
+.ficha div + div{padding-left:16px}
+.ficha div:last-child{border-right:0}
+.ficha b{display:block;font-family:var(--wide);font-weight:700;font-size:1.15rem;margin-top:4px;letter-spacing:-.01em}
+.ficha .mono{color:var(--cinza)}
+@media (max-width:720px){.ficha{grid-template-columns:1fr 1fr}.ficha div:nth-child(2){border-right:0}.ficha div:nth-child(3){padding-left:0;border-top:1px solid var(--linha)}.ficha div:nth-child(4){border-top:1px solid var(--linha)}}
+
+/* faixa de foto */
+.faixa{position:relative;height:clamp(300px,52vh,520px);overflow:hidden;color:#fff;border-bottom:1px solid var(--linha)}
+.faixa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.faixa::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(0,0,0,.6))}
+.faixa .frame{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding-bottom:clamp(24px,4vw,44px);border-color:rgba(255,255,255,.18)}
+.faixa p{font-family:var(--wide);font-weight:800;font-size:clamp(1.7rem,4.4vw,3.6rem);line-height:1;letter-spacing:-.03em;max-width:16ch}
+
+/* incluso */
+.inclusos{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linha)}
+.inclusos article{padding:24px var(--gutter) 34px;border-right:1px solid var(--linha);display:flex;flex-direction:column}
+.inclusos article:last-child{border-right:0}
+.letra{font-family:var(--serif);font-style:italic;font-size:3.2rem;line-height:1;color:var(--cinza);padding-bottom:28px}
+.inclusos h3{font-family:var(--wide);font-weight:700;font-size:1.35rem;letter-spacing:-.015em;line-height:1.15}
+.inclusos ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.inclusos li{color:#3c3b38;padding-left:16px;position:relative;font-size:.97rem}
+.inclusos li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--tinta)}
+@media (max-width:860px){.inclusos{grid-template-columns:1fr}.inclusos article{border-right:0;border-bottom:1px solid var(--linha)}.inclusos article:last-child{border-bottom:0}}
+
+/* dia da live */
+.roteiro{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--linha)}
+.roteiro div{padding:20px 16px 26px;border-right:1px solid var(--linha)}
+.roteiro div:last-child{border-right:0}
+.roteiro .tc{font-family:var(--mono);font-size:.78rem;color:var(--rec);font-variant-numeric:tabular-nums}
+.roteiro b{display:block;font-family:var(--wide);font-weight:700;margin-top:10px;font-size:1.05rem;letter-spacing:-.01em}
+.roteiro p{color:var(--cinza);font-size:.92rem;margin-top:6px}
+@media (max-width:900px){.roteiro{grid-template-columns:1fr}.roteiro div{border-right:0;border-bottom:1px solid var(--linha);display:grid;grid-template-columns:110px 1fr;gap:4px 16px}.roteiro div:last-child{border-bottom:0}.roteiro b{margin-top:0}.roteiro p{grid-column:2;margin-top:0}}
+
+/* investimento */
+.config{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--linha)}
+.grupo{padding:22px var(--gutter) 26px;border-right:1px solid var(--linha)}
+.grupo:last-child{border-right:0}
+.grupo legend{margin-bottom:14px;color:var(--cinza)}
+.opcoes{display:flex;flex-direction:column;gap:8px}
+.opcao{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--linha);cursor:pointer;transition:border-color .2s,background .2s}
+.opcao:hover{border-color:var(--tinta)}
+.opcao input{position:absolute;opacity:0;pointer-events:none}
+.opcao .nome{font-family:var(--wide);font-weight:700;letter-spacing:-.01em}
+.opcao .nome small{display:block;font-family:"Inter",sans-serif;font-weight:400;color:var(--cinza);font-size:.85rem;letter-spacing:0}
+.opcao .preco{font-family:var(--mono);font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.opcao:has(input:checked){background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.opcao:has(input:checked) .nome small{color:#bdbbb5}
+.opcao:has(input:focus-visible){outline:2px solid var(--rec);outline-offset:2px}
+@media (max-width:760px){.config{grid-template-columns:1fr}.grupo{border-right:0;border-bottom:1px solid var(--linha)}.grupo:last-child{border-bottom:0}}
+
+.total{display:grid;grid-template-columns:1.2fr 1fr;border-top:1px solid var(--linha);background:var(--tinta);color:var(--papel)}
+.total > div{padding:clamp(24px,4vw,44px) var(--gutter)}
+.total > div + div{border-left:1px solid #2c2c2a}
+.total .mono{color:#a5a39d}
+.valor{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:1;letter-spacing:-.03em;margin-top:10px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.valor small{font-family:var(--serif);font-style:italic;font-weight:400;font-variation-settings:normal;font-size:.42em;letter-spacing:0;margin-left:6px;color:#cfcdc7}
+.resumo{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.resumo li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #2c2c2a;padding-bottom:10px;font-size:.95rem}
+.resumo li span:last-child{font-family:var(--mono);font-size:.82rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.resumo li.forte{border-bottom:0;font-weight:600}
+@media (max-width:760px){.total{grid-template-columns:1fr}.total > div + div{border-left:0;border-top:1px solid #2c2c2a}}
+
+/* extras */
+.extras{border-top:1px solid var(--linha)}
+.extras li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px var(--gutter);border-bottom:1px solid var(--linha)}
+.extras li:last-child{border-bottom:0}
+.extras li span:first-child small{display:block;color:var(--cinza);font-size:.88rem}
+.extras li span:last-child{font-family:var(--mono);font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* equipamento */
+.equip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linha)}
+.equip div{padding:20px 16px 24px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.equip div:nth-child(4n){border-right:0}
+.equip b{display:block;font-family:var(--wide);font-weight:700;letter-spacing:-.01em;margin-top:6px}
+.equip .mono{color:var(--cinza)}
+.equip p{color:var(--cinza);font-size:.9rem;margin-top:4px}
+@media (max-width:860px){.equip{grid-template-columns:1fr 1fr}.equip div:nth-child(4n){border-right:1px solid var(--linha)}.equip div:nth-child(2n){border-right:0}}
+
+/* condições */
+.condicoes{border-top:1px solid var(--linha);counter-reset:c}
+.condicoes li{list-style:none;display:grid;grid-template-columns:200px 1fr;gap:6px 24px;padding:16px var(--gutter);border-bottom:1px solid var(--linha)}
+.condicoes li:last-child{border-bottom:0}
+.condicoes b{font-family:var(--wide);font-weight:700;letter-spacing:-.01em}
+.condicoes span{color:#3c3b38;max-width:62ch}
+@media (max-width:640px){.condicoes li{grid-template-columns:1fr}}
+
+/* aprovar */
+.aprovar{position:relative;overflow:hidden;color:#fff;text-align:center;border-bottom:0}
+.aprovar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.aprovar::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.66)}
+.aprovar .frame{position:relative;z-index:2;padding:clamp(80px,14vh,150px) var(--gutter);border-color:rgba(255,255,255,.18)}
+.aprovar h2{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.4rem,7.5vw,6.4rem);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
+.aprovar h2 em{text-transform:none;font-weight:400;font-variation-settings:normal;display:block}
+.aprovar p{max-width:44ch;margin:20px auto 0;color:rgba(255,255,255,.86);font-size:1.08rem}
+.aprovar .escolha{margin-top:14px;color:rgba(255,255,255,.75);text-transform:none;letter-spacing:.02em;font-size:.82rem}
+.botoes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #fff;transition:background .2s,color .2s}
+.btn.forte{background:#fff;color:var(--tinta)}
+.btn.forte:hover{background:var(--rec);border-color:var(--rec);color:#fff}
+.btn:not(.forte):hover{background:#fff;color:var(--tinta)}
+footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px var(--gutter);color:var(--cinza)}
+
+@media print{
+  .intro,.topo,.botoes{display:none!important}
+  .faixa,.aprovar img{break-inside:avoid}
+  section{break-inside:avoid-page}
+}
+</style>
+
+</head>
+<body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-box">
+    <div class="intro-marca">PROPOSTA</div>
+    <div class="intro-tc"><i class="ponto"></i><span>REC</span><span id="intro-tc">00:00:00:00</span></div>
+  </div>
+</div>
+
+<header class="topo">
+  <div class="frame">
+    <a class="logo" href="/"><i class="ponto" aria-hidden="true"></i>JÚLIO</a>
+    <div class="topo-dir">
+      <span class="mono">Proposta nº 001 · Out 2026</span>
+      <a class="topo-cta" href="#aprovar">Aprovar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="frame pad">
+      <span class="mono">Proposta comercial · Transmissão ao vivo</span>
+      <h1>SOS Consulta <em>ao vivo, todo mês.</em></h1>
+      <p class="hero-sub">Duas lives por mês no YouTube e no Instagram ao mesmo tempo, com várias câmeras, áudio limpo e nomes na tela. Eu levo o equipamento, monto, opero e desmonto. Vocês só precisam apresentar.</p>
+      <div class="ficha">
+        <div><span class="mono">Formato</span><b>Live de 1 hora</b></div>
+        <div><span class="mono">Frequência</span><b>2 por mês</b></div>
+        <div><span class="mono">Plataformas</span><b>YouTube + Instagram</b></div>
+        <div><span class="mono">Validade</span><b id="validade">15 dias</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa">
+    <img src="../../assets/julio-camera-evento.jpg" alt="">
+    <div class="frame pad"><p>Uma equipe <em>de uma pessoa só.</em></p></div>
+  </div>
+
+  <!-- INCLUSO -->
+  <section>
+    <div class="frame">
+      <div class="barra mono pad"><span>01 / O que está incluso</span><span>Em todas as lives</span></div>
+      <div class="cab pad"><h2>Tudo pronto <em>pra entrar no ar.</em></h2></div>
+      <div class="inclusos">
+        <article><span class="letra">A</span><h3>Imagem e som</h3>
+          <ul><li>Câmeras Blackmagic Pocket 4K com lentes profissionais</li><li>Tripés profissionais</li><li>Kit de iluminação: uma luz principal e duas de preenchimento</li><li>Microfones de lapela sem fio, ou Shure SM7B para formato podcast</li></ul></article>
+        <article><span class="letra">B</span><h3>Operação ao vivo</h3>
+          <ul><li>Corte entre câmeras na ATEM Mini Pro</li><li>Nome de apresentadores e convidados na tela</li><li>Perguntas do público exibidas ao vivo</li><li>Vinheta de abertura e encerramento</li></ul></article>
+        <article><span class="letra">C</span><h3>Transmissão</h3>
+          <ul><li>YouTube na horizontal e Instagram na vertical, ao mesmo tempo</li><li>Transmissão pelo MacBook dedicado</li><li>Gravação da live entregue no mesmo dia</li><li>Visita técnica antes da primeira live</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIA DA LIVE -->
+  <section>
+    <div class="frame">
+      <div class="barra mono pad"><span>02 / O dia da live</span><span>Exemplo para live às 19h</span></div>
+      <div class="cab pad"><h2>Como funciona <em>no dia.</em></h2><p>Chego com antecedência pra que tudo esteja testado antes de vocês sentarem na cadeira.</p></div>
+      <div class="roteiro">
+        <div><span class="tc">17:30</span><b>Chegada e montagem</b><p>Câmeras, luz, áudio e mesa de corte.</p></div>
+        <div><span class="tc">18:30</span><b>Teste completo</b><p>Som, enquadramento, internet e grafismo.</p></div>
+        <div><span class="tc">19:00</span><b>No ar</b><p>Live de 1 hora nas duas plataformas.</p></div>
+        <div><span class="tc">20:00</span><b>Encerramento</b><p>Vinheta final e fim da transmissão.</p></div>
+        <div><span class="tc">20:30</span><b>Desmontagem</b><p>Espaço liberado e gravação entregue.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTIMENTO -->
+  <section id="investimento">
+    <div class="frame">
+      <div class="barra mono pad"><span>03 / Investimento</span><span>Monte o seu pacote</span></div>
+      <div class="cab pad"><h2>Escolha <em>o formato.</em></h2><p>Toque nas opções para ver o valor mudar. Quanto mais câmeras, mais ângulos e mais dinamismo na live.</p></div>
+      <form class="config" id="config" onsubmit="return false">
+        <fieldset class="grupo" style="border:0;border-right:1px solid var(--linha)">
+          <legend class="mono">Câmeras</legend>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="cam" value="2" checked><span class="nome">2 câmeras<small>Plano aberto e plano fechado</small></span><span class="preco">R$ 900 / live</span></label>
+            <label class="opcao"><input type="radio" name="cam" value="3"><span class="nome">3 câmeras<small>Um plano fechado para cada pessoa</small></span><span class="preco">R$ 1.150 / live</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="grupo" style="border:0">
+          <legend class="mono">Contratação</legend>
+          <div class="opcoes">
+            <label class="opcao"><input type="radio" name="plano" value="mensal" checked><span class="nome">Pacote mensal<small>2 lives por mês, mínimo de 3 meses, 10% de desconto</small></span><span class="preco">−10%</span></label>
+            <label class="opcao"><input type="radio" name="plano" value="avulso"><span class="nome">Live avulsa<small>Sem fidelidade, valor cheio por live</small></span><span class="preco">por live</span></label>
+          </div>
+        </fieldset>
+      </form>
+      <div class="total" aria-live="polite">
+        <div>
+          <span class="mono" id="total-rotulo">Por mês</span>
+          <div class="valor" id="total-valor">R$ 1.620<small>/mês</small></div>
+        </div>
+        <div>
+          <ul class="resumo" id="resumo"></ul>
+        </div>
+      </div>
+      <ul class="extras">
+        <li><span>Pacote gráfico da live<small>Vinheta, nomes na tela, cenas horizontal e vertical. Pago uma vez, na aprovação.</small></span><span>R$ 600 · único</span></li>
+        <li><span>Teleprompter<small>Para abertura, roteiro ou leitura de textos.</small></span><span>+ R$ 100 / live</span></li>
+        <li><span>Corte com os melhores momentos<small>Vídeo de até 1 minuto editado, horizontal ou vertical.</small></span><span>+ R$ 250 / live</span></li>
+        <li><span>Reels a partir da live<small>Trechos verticais legendados para as redes.</small></span><span>+ R$ 120 / reel</span></li>
+        <li><span>Hora extra<small>Quando a live passa de 1h30 de duração.</small></span><span>+ R$ 150 / hora</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EQUIPAMENTO -->
+  <section>
+    <div class="frame">
+      <div class="barra mono pad"><span>04 / Equipamento</span><span>Levado e operado por mim</span></div>
+      <div class="equip">
+        <div><span class="mono">Câmeras</span><b>Blackmagic Pocket 4K</b><p>Até 3 câmeras</p></div>
+        <div><span class="mono">Ótica</span><b>Lentes profissionais</b><p>Planos abertos e fechados</p></div>
+        <div><span class="mono">Suporte</span><b>Tripés profissionais</b><p>Um por câmera</p></div>
+        <div><span class="mono">Luz</span><b>Kit de 3 luzes</b><p>Principal e 2 de preenchimento</p></div>
+        <div><span class="mono">Áudio</span><b>Lapelas sem fio</b><p>Para conversa e entrevista</p></div>
+        <div><span class="mono">Áudio</span><b>Shure SM7B</b><p>Para formato podcast</p></div>
+        <div><span class="mono">Corte</span><b>ATEM Mini Pro</b><p>Troca de câmeras ao vivo</p></div>
+        <div><span class="mono">Transmissão</span><b>MacBook dedicado</b><p>YouTube e Instagram juntos</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDIÇÕES -->
+  <section>
+    <div class="frame">
+      <div class="barra mono pad"><span>05 / Condições</span><span>Para ficar tudo claro</span></div>
+      <ul class="condicoes">
+        <li><b>Internet</b><span>O local precisa de internet com pelo menos 20 Mbps de upload, de preferência por cabo. A conexão é responsabilidade do contratante. Testo tudo na visita técnica.</span></li>
+        <li><b>Pagamento</b><span>Pacote gráfico na aprovação. Mensalidade paga até o dia 5 de cada mês, por Pix. Lives avulsas pagas até o dia da transmissão.</span></li>
+        <li><b>Fidelidade</b><span>O pacote mensal tem mínimo de 3 meses. Depois disso, renovação mês a mês.</span></li>
+        <li><b>Remarcação</b><span>Lives podem ser remarcadas sem custo com até 48 horas de antecedência.</span></li>
+        <li><b>Local</b><span>Deslocamento dentro da Grande Belém incluso. Outras cidades com valor à parte.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- APROVAR -->
+  <section class="aprovar" id="aprovar">
+    <img src="../../assets/julio-bastidores.jpg" alt="">
+    <div class="frame">
+      <h2>Vamos <em>entrar no ar?</em></h2>
+      <p>Toque no botão para aprovar pelo WhatsApp. A mensagem já vai com o formato que você escolheu.</p>
+      <p class="escolha mono" id="escolha"></p>
+      <div class="botoes">
+        <a class="btn forte" id="btn-aprovar" href="#" target="_blank" rel="noopener">Aprovar no WhatsApp</a>
+        <a class="btn" href="/#trabalhos">Ver meus trabalhos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="frame mono"><span>Júlio Assumpção · Filmmaker</span><span>(91) 98417-6465 · Belém, Pará</span></div></footer>
+
+<script>
+const PRECO = { 2: 900, 3: 1150 };   // valor por live, por número de câmeras
+const DESCONTO = 0.10;               // desconto do pacote mensal
+const LIVES_MES = 2;
+const WHATS = '5591984176465';
+const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
+
+function atualizar(){
+  const cam = +document.querySelector('input[name=cam]:checked').value;
+  const plano = document.querySelector('input[name=plano]:checked').value;
+  const live = PRECO[cam];
+  const valorEl = document.getElementById('total-valor');
+  const resumo = document.getElementById('resumo');
+  let texto;
+  if (plano === 'mensal') {
+    const bruto = live * LIVES_MES, mes = Math.round(bruto * (1 - DESCONTO));
+    document.getElementById('total-rotulo').textContent = 'Por mês';
+    valorEl.innerHTML = brl(mes) + '<small>/mês</small>';
+    resumo.innerHTML = `
+      <li><span>${LIVES_MES} lives com ${cam} câmeras</span><span>${brl(bruto)}</span></li>
+      <li><span>Desconto do pacote mensal</span><span>− ${brl(bruto-mes)}</span></li>
+      <li><span>Pacote gráfico, pago uma vez</span><span>${brl(600)}</span></li>
+      <li class="forte"><span>Contrato mínimo de 3 meses</span><span>${brl(mes*3)}</span></li>`;
+    texto = `pacote mensal com ${cam} câmeras (${brl(mes)}/mês)`;
+  } else {
+    document.getElementById('total-rotulo').textContent = 'Por live';
+    valorEl.innerHTML = brl(live) + '<small>/live</small>';
+    resumo.innerHTML = `
+      <li><span>Live de 1 hora com ${cam} câmeras</span><span>${brl(live)}</span></li>
+      <li><span>Pacote gráfico, pago uma vez</span><span>${brl(600)}</span></li>
+      <li class="forte"><span>Sem fidelidade</span><span>—</span></li>`;
+    texto = `live avulsa com ${cam} câmeras (${brl(live)} por live)`;
+  }
+  document.getElementById('escolha').textContent = 'Sua escolha: ' + texto;
+  const msg = `Olá Júlio! Aprovamos a proposta da SOS Consulta: ${texto}. Vamos combinar a visita técnica?`;
+  document.getElementById('btn-aprovar').href = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+}
+document.getElementById('config').addEventListener('change', atualizar);
+atualizar();
+
+/* validade: 15 dias a partir da data da proposta */
+const emissao = new Date(2026, 9, 15);
+const fim = new Date(emissao); fim.setDate(fim.getDate()+15);
+document.getElementById('validade').textContent = 'Até ' + fim.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+
+/* abertura */
+const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const intro = document.getElementById('intro'), itc = document.getElementById('intro-tc');
+const t0 = performance.now(); const p2 = n=>String(n).padStart(2,'0');
+let ativo = true;
+(function tick(){ if(!ativo) return; const ms=performance.now()-t0, s=Math.floor(ms/1000);
+  itc.textContent = `00:00:${p2(s%60)}:${p2(Math.floor(ms/1000*30)%30)}`; requestAnimationFrame(tick); })();
+setTimeout(()=>{ ativo=false; intro.classList.add('saiu'); }, parado ? 600 : 1300);
+</script>
+
+</body>
+</html>
