@@ -52,7 +52,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing
 }
 .intro.saiu{opacity:0;visibility:hidden}
 .intro-box{display:flex;flex-direction:column;align-items:center;gap:18px}
-.intro-marca{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.02em;line-height:1;overflow:hidden}
+.intro-marca{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.02em;line-height:1.25;overflow:hidden;padding:.1em 0}
 .intro-marca span{display:inline-block;transform:translateY(105%);animation:sobe .7s cubic-bezier(.2,.8,.2,1) forwards}
 .intro-marca span:nth-child(2){animation-delay:.06s}.intro-marca span:nth-child(3){animation-delay:.12s}
 .intro-marca span:nth-child(4){animation-delay:.18s}.intro-marca span:nth-child(5){animation-delay:.24s}
@@ -90,9 +90,9 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing
 @media (max-width:760px){.regua{display:none}}
 
 /* ---------- reveal de texto ---------- */
-.linha-rev{display:block;overflow:hidden;padding-bottom:.06em}
-.linha-rev > span{display:block;transform:translateY(102%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.visivel .linha-rev > span{transform:none}
+.linha-rev{display:block}
+.linha-rev > span{display:block;opacity:0;transform:translateY(.35em);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.visivel .linha-rev > span{transform:none;opacity:1}
 .visivel .linha-rev:nth-child(2) > span{transition-delay:.08s}
 .visivel .linha-rev:nth-child(3) > span{transition-delay:.16s}
 .sobe{opacity:0;transform:translateY(16px);transition:opacity .8s ease .2s,transform .8s ease .2s}
@@ -100,8 +100,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing
 
 /* ---------- hero ---------- */
 .hero .frame{padding-top:clamp(56px,10vh,120px);padding-bottom:clamp(40px,7vh,80px);text-align:center}
-.hero-nome .linha-rev{padding-top:.16em;margin-top:-.16em}
-.hero-nome{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.5rem,9.6vw,9.5rem);line-height:.88;letter-spacing:-.03em;text-transform:uppercase}
+.hero-nome{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(2.5rem,9.6vw,9.5rem);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
 .hero-frase{font-family:var(--wide);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.9rem);line-height:1.1;letter-spacing:-.02em;margin-top:clamp(22px,3vw,36px)}
 .hero-frase em{font-size:1.08em}
 .hero-sub{max-width:44ch;margin:18px auto 0;color:var(--cinza);font-size:clamp(1rem,1.3vw,1.12rem)}
@@ -124,7 +123,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing
 /* ---------- letreiro de clientes ---------- */
 .letreiro{border-bottom:1px solid var(--linha);overflow:hidden;white-space:nowrap;padding:18px 0;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.letreiro-trilho{display:inline-flex;gap:48px;animation:rola 38s linear infinite;padding-left:48px}
+.letreiro-trilho{display:inline-flex;gap:48px;animation:rola 38s linear infinite;padding-left:48px;will-change:transform;-webkit-animation:rola 38s linear infinite}
 .letreiro span{font-family:var(--wide);font-variation-settings:"wdth" 110;font-weight:700;font-size:clamp(1.2rem,2.2vw,1.8rem);letter-spacing:-.01em;display:inline-flex;align-items:center;gap:48px}
 .letreiro span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--rec)}
 .letreiro span:nth-child(even){font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.4rem,2.6vw,2.15rem)}
@@ -217,7 +216,7 @@ section{scroll-margin-top:52px}
 .contato .faixa-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
 .contato::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.62)}
 .contato .frame{position:relative;z-index:2;padding:clamp(90px,16vh,170px) var(--gutter);border-color:rgba(255,255,255,.18)}
-.contato h2{font-family:var(--wide);font-weight:900;font-variation-settings:"wdth" 125;font-size:clamp(2.8rem,9vw,8rem);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
+.contato h2{font-family:var(--wide);font-weight:900;font-variation-settings:"wdth" 125;font-size:clamp(2.8rem,9vw,8rem);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
 .contato h2 em{text-transform:none;font-weight:400;font-size:1.04em}
 .contato p{max-width:40ch;margin:22px auto 0;color:rgba(255,255,255,.85);font-size:1.12rem}
 .contato .btn{border-color:#fff}
@@ -239,10 +238,8 @@ dialog.v .dlg-midia{aspect-ratio:9/16;max-height:82vh;margin:0 auto}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .intro{display:none}
-  .linha-rev > span,.sobe{transform:none;opacity:1;transition:none}
-  .letreiro-trilho{animation:none}
-  .ponto{animation:none}
+  .linha-rev > span,.sobe{transform:none !important;opacity:1 !important;transition:none}
+  .letreiro-trilho{animation-duration:60s}
   .faixa-img{transform:none !important}
 }
 </style>
@@ -360,8 +357,8 @@ dialog.v .dlg-midia{aspect-ratio:9/16;max-height:82vh;margin:0 auto}
           </ul>
         </div>
         <div class="fotos-sobre sobe">
-          <figure><img src="assets/julio-camera-palco.jpg" alt="Júlio operando câmera no palco, de headset" loading="lazy"><figcaption class="mono">No palco</figcaption></figure>
-          <figure><img src="assets/julio-all-access.jpg" alt="Júlio sorrindo nos bastidores de um evento" loading="lazy"><figcaption class="mono">All access</figcaption></figure>
+          <figure><img src="assets/julio-camera-palco.jpg" alt="Júlio operando câmera no palco, de headset" loading="lazy"></figure>
+          <figure><img src="assets/julio-all-access.jpg" alt="Júlio sorrindo nos bastidores de um evento" loading="lazy"></figure>
         </div>
       </div>
     </div>
@@ -514,10 +511,9 @@ const introTc = document.getElementById('intro-tc'), reelTc = document.getElemen
 /* abertura */
 const intro = document.getElementById('intro');
 const t0 = performance.now();
-let introAtiva = !parado;
+let introAtiva = true;
 function fimIntro(){ introAtiva=false; intro.classList.add('saiu'); document.querySelector('.hero').classList.add('visivel'); }
-if (parado) { reelV.removeAttribute('autoplay'); reelV.pause(); fimIntro(); }
-else setTimeout(fimIntro, 1500);
+setTimeout(fimIntro, 1500);
 
 /* reveal ao rolar */
 const obs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visivel'); obs.unobserve(e.target);} }),{threshold:.12});
